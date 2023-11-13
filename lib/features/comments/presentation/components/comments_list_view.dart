@@ -6,6 +6,9 @@ import 'package:moboom_app/features/comments/presentation/cubit/comments_cubit.d
 import 'package:moboom_app/features/common/presentation/components/failure_view.dart';
 import 'package:moboom_app/features/common/presentation/components/progress_view.dart';
 
+// TODO: Update the UI
+// TODO: Add responsiveness
+// TODO: Add i10n
 class CommentsListView extends StatelessWidget {
   const CommentsListView({super.key});
 
