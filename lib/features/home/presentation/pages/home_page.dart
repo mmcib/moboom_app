@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moboom_app/features/comments/presentation/pages/comments_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage();
@@ -12,7 +13,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _tabOptions = [
     Text('Photos List'),
-    Text('Comments List'),
+    CommentsPage(),
   ];
 
   void _onItemTapped(int index) {
