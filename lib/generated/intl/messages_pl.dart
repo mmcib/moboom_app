@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a pl locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,24 +18,24 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'pl';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "body": MessageLookupByLibrary.simpleMessage("body"),
-        "comments": MessageLookupByLibrary.simpleMessage("comments"),
+        "body": MessageLookupByLibrary.simpleMessage("treść"),
+        "comments": MessageLookupByLibrary.simpleMessage("komentarze"),
         "commentsNotFound":
-            MessageLookupByLibrary.simpleMessage("Comments not found"),
+            MessageLookupByLibrary.simpleMessage("Komentarze nie znalezione"),
         "email": MessageLookupByLibrary.simpleMessage("email"),
         "failureViewMessage":
-            MessageLookupByLibrary.simpleMessage("Ups... something went wrong"),
-        "fullPhoto": MessageLookupByLibrary.simpleMessage("Full Photo"),
-        "name": MessageLookupByLibrary.simpleMessage("name"),
+            MessageLookupByLibrary.simpleMessage("Ups... coś poszło nie tak"),
+        "fullPhoto": MessageLookupByLibrary.simpleMessage("Pełne Zdjęcie"),
+        "name": MessageLookupByLibrary.simpleMessage("nazwa"),
         "noInternetConnection":
-            MessageLookupByLibrary.simpleMessage("No internet connection"),
-        "photos": MessageLookupByLibrary.simpleMessage("photos"),
+            MessageLookupByLibrary.simpleMessage("Brak internetu"),
+        "photos": MessageLookupByLibrary.simpleMessage("zdjęcia"),
         "photosNotFound":
-            MessageLookupByLibrary.simpleMessage("Photos not found"),
-        "title": MessageLookupByLibrary.simpleMessage("title")
+            MessageLookupByLibrary.simpleMessage("Zdjęcia nie znalezione"),
+        "title": MessageLookupByLibrary.simpleMessage("tytuł")
       };
 }

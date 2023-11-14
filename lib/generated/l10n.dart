@@ -49,6 +49,116 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `name`
+  String get name {
+    return Intl.message(
+      'name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `email`
+  String get email {
+    return Intl.message(
+      'email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `body`
+  String get body {
+    return Intl.message(
+      'body',
+      name: 'body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `title`
+  String get title {
+    return Intl.message(
+      'title',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `comments`
+  String get comments {
+    return Intl.message(
+      'comments',
+      name: 'comments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `photos`
+  String get photos {
+    return Intl.message(
+      'photos',
+      name: 'photos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Photo`
+  String get fullPhoto {
+    return Intl.message(
+      'Full Photo',
+      name: 'fullPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Photos not found`
+  String get photosNotFound {
+    return Intl.message(
+      'Photos not found',
+      name: 'photosNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comments not found`
+  String get commentsNotFound {
+    return Intl.message(
+      'Comments not found',
+      name: 'commentsNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ups... something went wrong`
+  String get failureViewMessage {
+    return Intl.message(
+      'Ups... something went wrong',
+      name: 'failureViewMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connection`
+  String get noInternetConnection {
+    return Intl.message(
+      'No internet connection',
+      name: 'noInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +167,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'pl'),
     ];
   }
 

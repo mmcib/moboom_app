@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moboom_app/core/dependency_injection/domain/dependencies_container.dart';
+import 'package:moboom_app/core/extensions/string_extensions.dart';
 import 'package:moboom_app/features/photos/presentation/components/photos_list_view.dart';
 import 'package:moboom_app/features/photos/presentation/cubit/photos_cubit.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
 class PhotosPage extends StatelessWidget {
   const PhotosPage({super.key});
@@ -19,7 +21,7 @@ class PhotosPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
       appBar: AppBar(
-        title: Text('Photos'),
+        title: Text(S.of(context).photos.capitalize()),
         centerTitle: true,
       ),
       body: PhotosListView(),

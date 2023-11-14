@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:moboom_app/core/extensions/string_extensions.dart';
 import 'package:moboom_app/features/comments/data/models/comment_model.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
 class CommentCardBody extends StatelessWidget {
   const CommentCardBody({
@@ -43,7 +45,7 @@ class CommentCardBody extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'name: ${comment.name}',
+                        '${S.of(context).name.capitalize()}: ${comment.name}',
                         style: TextStyle(
                           color: Color(0xFF14181B),
                           fontSize: 16.sp,
@@ -53,7 +55,7 @@ class CommentCardBody extends StatelessWidget {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 4.r, 0, 0),
                         child: Text(
-                          'email: ${comment.email}',
+                          '${S.of(context).email}: ${comment.email}',
                           style: TextStyle(
                             color: Color(0xFF57636C),
                             fontSize: 14.sp,
@@ -64,7 +66,7 @@ class CommentCardBody extends StatelessWidget {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 4.r, 0, 0),
                         child: Text(
-                          'body:  ${comment.body}',
+                          '${S.of(context).body}: ${comment.body}',
                           style: TextStyle(
                             color: Color(0xFF57636C),
                             fontSize: 14.sp,
