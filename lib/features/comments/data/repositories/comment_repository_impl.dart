@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:moboom_app/core/data/api/api_client.dart';
 import 'package:moboom_app/core/error/failures.dart';
@@ -14,19 +15,18 @@ class CommentRepositoryImpl extends CommentRepository {
   @override
   Future<Either<Failure, List<CommentModel>>> getComments() async {
     try {
-      final responseBody = await _apiClient.get('comments', params: {
+      final response = await _apiClient.get('comments', params: {
         "_limit": 10,
       });
+        final comments =
+            (response as List).map((it) => CommentModel.fromJson(it)).toList();
 
-      final comments = (responseBody as List)
-          .map((it) => CommentModel.fromJson(it))
-          .toList();
-
-      return Right(comments);
-    } on Failure catch (failure) {
-      return Left(failure);
+        return Right(comments);
+    } on SocketException catch (_) {
+      return Left<Failure, List<CommentModel>>(NoInternetConnectionFailure());
     } catch (e) {
-      return Left(ClientFailure(e));
+      // here we can add some logger to print errors and also send those errors to Firebase
+      return Left<Failure, List<CommentModel>>(ClientFailure(e.toString()));
     }
   }
 }
