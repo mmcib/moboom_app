@@ -22,9 +22,7 @@ class PhotosPage extends StatelessWidget {
         title: Text('Photos'),
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: PhotosListView(),
-      ),
+      body: PhotosListView(),
     );
   }
 }
