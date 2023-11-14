@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moboom_app/core/presentation/components/cached_image_component.dart';
 import 'package:moboom_app/features/photos/data/models/photo_model.dart';
+import 'package:moboom_app/features/photos/presentation/components/full_photo_title_component.dart';
 
 // TODO: Add responsiveness
 // TODO: Add i10n
@@ -20,36 +21,10 @@ class FullPhotoView extends StatelessWidget {
         centerTitle: true,
         title: Text('Full Photo'),
       ),
-      body: Column(
+      body: ListView(
         children: [
+          FullPhotoTitleComponent(title: photo.title),
           CachedImageComponent(imageUrl: photo.url),
-          Align(
-            child: Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 6,
-                  horizontal: 8,
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      'Title',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      photo.title,
-                      style: TextStyle(fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );
