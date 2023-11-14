@@ -1,5 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:moboom_app/core/presentation/components/cached_image_component.dart';
 import 'package:moboom_app/features/photos/data/models/photo_model.dart';
 
 // TODO: Add responsiveness
@@ -22,11 +22,7 @@ class FullPhotoView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          CachedNetworkImage(
-            imageUrl: photo.url,
-            placeholder: (_, __) => CircularProgressIndicator(color: Colors.deepPurpleAccent),
-            errorWidget: (_, __, ___) => Icon(Icons.error),
-          ),
+          CachedImageComponent(imageUrl: photo.url),
           Align(
             child: Container(
               color: Colors.white,

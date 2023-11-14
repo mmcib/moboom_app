@@ -1,14 +1,13 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moboom_app/core/presentation/bloc/get_data_state.dart';
+import 'package:moboom_app/core/presentation/components/cached_image_component.dart';
 import 'package:moboom_app/features/common/presentation/components/failure_view.dart';
 import 'package:moboom_app/features/common/presentation/components/progress_view.dart';
 import 'package:moboom_app/features/photos/data/models/photo_model.dart';
 import 'package:moboom_app/features/photos/presentation/components/full_photo_view.dart';
 import 'package:moboom_app/features/photos/presentation/cubit/photos_cubit.dart';
 
-// TODO: Update the UI
 // TODO: Add responsiveness
 // TODO: Add i10n
 class PhotosListView extends StatelessWidget {
@@ -40,11 +39,7 @@ class PhotosListView extends StatelessWidget {
                           ),
                         );
                       },
-                      child: CachedNetworkImage(
-                        imageUrl: photos[index].thumbnailUrl,
-                        placeholder: (context, url) => CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
-                      ),
+                      child: CachedImageComponent(imageUrl: photos[index].thumbnailUrl),
                     );
                   },
                 ),
