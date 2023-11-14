@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FullPhotoTitleComponent extends StatelessWidget {
   const FullPhotoTitleComponent({
@@ -12,25 +13,25 @@ class FullPhotoTitleComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       child: Container(
-        width: MediaQuery.sizeOf(context).width,
+        width: 1.sw,
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             vertical: 6,
             horizontal: 8,
-          ),
+          ).r,
           child: Column(
             children: [
               Text(
                 'Title',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                 title,
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 16.sp),
                 textAlign: TextAlign.center,
               ),
             ],

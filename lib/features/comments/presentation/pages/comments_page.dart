@@ -19,9 +19,7 @@ class CommentsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
       appBar: AppBar(
-        title: Text(
-          'Comments',
-        ),
+        title: Text('Comments'),
         centerTitle: true,
       ),
       body: SafeArea(

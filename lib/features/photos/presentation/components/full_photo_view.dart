@@ -3,7 +3,6 @@ import 'package:moboom_app/core/presentation/components/cached_image_component.d
 import 'package:moboom_app/features/photos/data/models/photo_model.dart';
 import 'package:moboom_app/features/photos/presentation/components/full_photo_title_component.dart';
 
-// TODO: Add responsiveness
 // TODO: Add i10n
 class FullPhotoView extends StatelessWidget {
   const FullPhotoView({

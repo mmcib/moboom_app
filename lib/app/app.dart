@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:moboom_app/core/theme/theme.dart';
 import 'package:moboom_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -14,18 +15,25 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
-      title: appName,
-      theme: getAppTheme(context),
-      darkTheme: getAppTheme(context),
-      initialRoute: '/',
-      onGenerateRoute: (settings) => router(settings),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          title: appName,
+          theme: getAppTheme(context),
+          darkTheme: getAppTheme(context),
+          initialRoute: '/',
+          onGenerateRoute: (settings) => router(settings),
+        );
+      },
     );
   }
 }

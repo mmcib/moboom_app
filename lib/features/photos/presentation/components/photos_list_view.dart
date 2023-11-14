@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:moboom_app/core/presentation/bloc/get_data_state.dart';
 import 'package:moboom_app/core/presentation/components/cached_image_component.dart';
 import 'package:moboom_app/features/common/presentation/components/failure_view.dart';
@@ -8,7 +9,6 @@ import 'package:moboom_app/features/photos/data/models/photo_model.dart';
 import 'package:moboom_app/features/photos/presentation/components/full_photo_view.dart';
 import 'package:moboom_app/features/photos/presentation/cubit/photos_cubit.dart';
 
-// TODO: Add responsiveness
 // TODO: Add i10n
 class PhotosListView extends StatelessWidget {
   const PhotosListView({super.key});
@@ -21,12 +21,12 @@ class PhotosListView extends StatelessWidget {
           success: (List<PhotoModel> photos) {
             if (photos.isNotEmpty) {
               return Padding(
-                padding: EdgeInsets.all(8),
+                padding: EdgeInsets.all(8).r,
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    crossAxisSpacing: 4,
-                    mainAxisSpacing: 4,
+                    crossAxisSpacing: 4.w,
+                    mainAxisSpacing: 4.h,
                   ),
                   itemCount: photos.length,
                   itemBuilder: (context, index) {
