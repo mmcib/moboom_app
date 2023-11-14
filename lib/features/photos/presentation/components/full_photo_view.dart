@@ -28,8 +28,8 @@ class FullPhotoView extends StatelessWidget {
             const SizedBox(height: 12),
             CachedNetworkImage(
               imageUrl: photo.url,
-              placeholder: (context, url) => CircularProgressIndicator(),
-              errorWidget: (context, url, error) => Icon(Icons.error),
+              placeholder: (_, __) => CircularProgressIndicator(color: Colors.deepPurpleAccent),
+              errorWidget: (_, __, ___) => Icon(Icons.error),
             ),
           ],
         ),
