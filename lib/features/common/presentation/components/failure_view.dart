@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:moboom_app/core/error/failures.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
 class FailureView extends StatelessWidget {
   const FailureView({
@@ -19,7 +20,7 @@ class FailureView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Failure message',
+            S.of(context).failureViewMessage,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           SizedBox(height: 12.h),

@@ -7,8 +7,8 @@ import 'package:moboom_app/features/comments/presentation/components/comment_car
 import 'package:moboom_app/features/comments/presentation/cubit/comments_cubit.dart';
 import 'package:moboom_app/features/common/presentation/components/failure_view.dart';
 import 'package:moboom_app/features/common/presentation/components/progress_view.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
-// TODO: Add i10n
 class CommentsListView extends StatelessWidget {
   const CommentsListView({super.key});
 
@@ -35,7 +35,7 @@ class CommentsListView extends StatelessWidget {
             }
 
             return Center(
-              child: Text('Comments Not Found'),
+              child: Text(S.of(context).commentsNotFound),
             );
           },
           inProgress: () => const ProgressView(color: Colors.deepPurpleAccent),

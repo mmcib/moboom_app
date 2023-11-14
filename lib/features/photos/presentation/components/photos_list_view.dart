@@ -8,8 +8,8 @@ import 'package:moboom_app/features/common/presentation/components/progress_view
 import 'package:moboom_app/features/photos/data/models/photo_model.dart';
 import 'package:moboom_app/features/photos/presentation/components/full_photo_view.dart';
 import 'package:moboom_app/features/photos/presentation/cubit/photos_cubit.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
-// TODO: Add i10n
 class PhotosListView extends StatelessWidget {
   const PhotosListView({super.key});
 
@@ -47,7 +47,7 @@ class PhotosListView extends StatelessWidget {
             }
 
             return Center(
-              child: Text('Photos Not Found'),
+              child: Text(S.of(context).photosNotFound),
             );
 
           },

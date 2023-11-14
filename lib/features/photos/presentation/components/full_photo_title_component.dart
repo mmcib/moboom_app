@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:moboom_app/core/extensions/string_extensions.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
 class FullPhotoTitleComponent extends StatelessWidget {
   const FullPhotoTitleComponent({
@@ -23,7 +25,7 @@ class FullPhotoTitleComponent extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Title',
+                S.of(context).title.capitalize(),
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,

@@ -1,1 +1,14 @@
-{}
+{
+    "@@locale": "en",
+    "name": "name",
+    "email": "email",
+    "body": "body",
+    "title": "title",
+    "comments": "comments",
+    "photos": "photos",
+    "fullPhoto": "Full Photo",
+    "photosNotFound": "Photos not found",
+    "commentsNotFound": "Comments not found",
+    "failureViewMessage": "Ups... something went wrong",
+    "noInternetConnection": "No internet connection"
+}

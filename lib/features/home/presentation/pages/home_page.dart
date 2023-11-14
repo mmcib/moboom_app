@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:moboom_app/core/extensions/string_extensions.dart';
 import 'package:moboom_app/features/comments/presentation/pages/comments_page.dart';
 import 'package:moboom_app/features/photos/presentation/pages/photos_page.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage();
@@ -31,11 +33,11 @@ class _HomePageState extends State<HomePage> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.photo_library),
-            label: 'Photos',
+            label: S.of(context).photos.capitalize(),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
-            label: 'Comments',
+            label: S.of(context).comments.capitalize(),
           ),
         ],
         currentIndex: _selectedIndex,

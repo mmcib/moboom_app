@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moboom_app/core/dependency_injection/domain/dependencies_container.dart';
+import 'package:moboom_app/core/extensions/string_extensions.dart';
 import 'package:moboom_app/features/comments/presentation/components/comments_list_view.dart';
 import 'package:moboom_app/features/comments/presentation/cubit/comments_cubit.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
 class CommentsPage extends StatelessWidget {
   const CommentsPage({super.key});
@@ -19,7 +21,7 @@ class CommentsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
       appBar: AppBar(
-        title: Text('Comments'),
+        title: Text(S.of(context).comments.capitalize()),
         centerTitle: true,
       ),
       body: SafeArea(

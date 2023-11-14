@@ -1,0 +1,14 @@
+{
+    "@@locale": "pl",
+    "name": "nazwa",
+    "email": "email",
+    "body": "treść",
+    "title": "tytuł",
+    "comments": "komentarze",
+    "photos": "zdjęcia",
+    "fullPhoto": "Pełne Zdjęcie",
+    "photosNotFound": "Zdjęcia nie znalezione",
+    "commentsNotFound": "Komentarze nie znalezione",
+    "failureViewMessage": "Ups... coś poszło nie tak",
+    "noInternetConnection": "Brak internetu"
+}
