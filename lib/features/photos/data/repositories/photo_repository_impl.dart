@@ -17,9 +17,9 @@ class PhotoRepositoryImpl extends PhotoRepository {
         "_limit": 10,
       });
 
-      final comments = (response as List).map((it) => PhotoModel.fromJson(it)).toList();
+      final photos = (response as List).map((it) => PhotoModel.fromJson(it)).toList();
 
-      return Right(comments);
+      return Right(photos);
     } on SocketException catch (_) {
       return Left<Failure, List<PhotoModel>>(NoInternetConnectionFailure());
     } catch (e) {
