@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "photos": MessageLookupByLibrary.simpleMessage("zdjęcia"),
         "photosNotFound":
             MessageLookupByLibrary.simpleMessage("Zdjęcia nie znalezione"),
-        "title": MessageLookupByLibrary.simpleMessage("tytuł")
+        "title": MessageLookupByLibrary.simpleMessage("tytuł"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Spróbuj ponownie")
       };
 }

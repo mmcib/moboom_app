@@ -39,7 +39,10 @@ class CommentsListView extends StatelessWidget {
             );
           },
           inProgress: () => const ProgressView(color: Colors.deepPurpleAccent),
-          failure: (failure) => FailureView(failure: failure),
+          failure: (failure) => FailureView(
+            failure: failure,
+            onRetry: () => context.read<CommentsCubit>().loadComments(),
+          ),
           orElse: () => const SizedBox.shrink(),
         );
       },
