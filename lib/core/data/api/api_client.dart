@@ -17,7 +17,9 @@ class ApiClient {
         connectTimeout: Duration(milliseconds: 10000),
         receiveTimeout: Duration(milliseconds: 10000),
         baseUrl: url,
-        headers: {},
+        headers: {
+          "Content-Type":"application/json"
+        },
       ),
     )..interceptors.addAll([_getPrettyLoggerInterceptor()]);
 

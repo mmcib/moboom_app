@@ -1,5 +1,5 @@
-import 'dart:io';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:moboom_app/core/data/api/api_client.dart';
 import 'package:moboom_app/core/error/failures.dart';
 import 'package:moboom_app/features/photos/data/models/photo_model.dart';
@@ -17,14 +17,32 @@ class PhotoRepositoryImpl extends PhotoRepository {
         "_limit": 10,
       });
 
-      final photos = (response as List).map((it) => PhotoModel.fromJson(it)).toList();
+      final photos =
+          (response as List).map((it) => PhotoModel.fromJson(it)).toList();
 
       return Right(photos);
-    } on SocketException catch (_) {
+    } on ServerFailure catch (e) {
+      return Left<Failure, List<PhotoModel>>(
+        ServerFailure(
+          statusCode: e.statusCode,
+          errorMessage: e.errorMessage,
+          reason: e.reason?.toString(),
+        ),
+      );
+    } on NoInternetConnectionFailure catch (_) {
       return Left<Failure, List<PhotoModel>>(NoInternetConnectionFailure());
+    } on ClientFailure catch (e) {
+      if (e.exception.type == DioExceptionType.connectionError ||
+          e.exception.type == DioExceptionType.connectionTimeout ||
+          e.exception.type == DioExceptionType.receiveTimeout ||
+          e.exception.type == DioExceptionType.sendTimeout) {
+        return Left<Failure, List<PhotoModel>>(NoInternetConnectionFailure());
+      }
+
+      return Left<Failure, List<PhotoModel>>(ClientFailure(e));
     } catch (e) {
       // here we can add some logger to print errors and also send those errors to Firebase
-      return Left<Failure, List<PhotoModel>>(ClientFailure(e.toString()));
+      return Left<Failure, List<PhotoModel>>(ClientFailure(e));
     }
   }
 }
