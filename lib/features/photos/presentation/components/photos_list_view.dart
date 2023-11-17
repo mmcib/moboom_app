@@ -49,10 +49,12 @@ class PhotosListView extends StatelessWidget {
             return Center(
               child: Text(S.of(context).photosNotFound),
             );
-
           },
           inProgress: () => const ProgressView(color: Colors.deepPurpleAccent),
-          failure: (failure) => FailureView(failure: failure),
+          failure: (failure) => FailureView(
+            failure: failure,
+            onRetry: () => context.read<PhotosCubit>().loadPhotos(),
+          ),
           orElse: () => const SizedBox.shrink(),
         );
       },

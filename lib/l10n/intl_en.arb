@@ -10,5 +10,6 @@
     "photosNotFound": "Photos not found",
     "commentsNotFound": "Comments not found",
     "failureViewMessage": "Ups... something went wrong",
-    "noInternetConnection": "No internet connection"
+    "noInternetConnection": "No internet connection",
+    "tryAgain": "Try again"
 }

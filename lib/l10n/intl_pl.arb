@@ -10,5 +10,6 @@
     "photosNotFound": "Zdjęcia nie znalezione",
     "commentsNotFound": "Komentarze nie znalezione",
     "failureViewMessage": "Ups... coś poszło nie tak",
-    "noInternetConnection": "Brak internetu"
+    "noInternetConnection": "Brak internetu",
+    "tryAgain": "Spróbuj ponownie"
 }

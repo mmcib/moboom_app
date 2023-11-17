@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
 abstract class Failure extends Equatable {
   @override
@@ -44,7 +45,6 @@ class NoInternetConnectionFailure extends Failure {
 
   @override
   String getMessage() {
-    // return S.current.noInternetConnection;
-    return 'S.current.noInternetConnection';
+    return S.current.noInternetConnection;
   }
 }
