@@ -20,6 +20,7 @@ class PhotosPage extends StatelessWidget {
   Widget _buildBody(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
+      // If we have a lot of different, but repetitive colors we should create a file and store them in the Class like "ColorsBase"
       appBar: AppBar(
         title: Text(S.of(context).photos.capitalize()),
         centerTitle: true,
