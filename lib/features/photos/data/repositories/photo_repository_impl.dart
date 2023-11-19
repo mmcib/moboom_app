@@ -16,6 +16,7 @@ class PhotoRepositoryImpl extends PhotoRepository {
       final response = await _apiClient.get('photos', params: {
         "_limit": 10,
         // I have added the limit, because the API returns enormous amount of photos
+        // In such cases we should implement some pagination
       });
 
       final photos =

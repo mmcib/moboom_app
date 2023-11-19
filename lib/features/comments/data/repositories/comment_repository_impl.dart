@@ -18,6 +18,7 @@ class CommentRepositoryImpl extends CommentRepository {
       final response = await _apiClient.get('comments', params: {
         "_limit": 10,
         // I have added the limit, because the API returns enormous amount of comments
+        // In such cases we should implement some pagination
       });
 
         final comments =
