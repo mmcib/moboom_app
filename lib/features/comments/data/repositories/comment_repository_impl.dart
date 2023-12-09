@@ -24,6 +24,7 @@ class CommentRepositoryImpl extends CommentRepository {
         final comments =
             (response as List).map((it) => CommentModel.fromJson(it)).toList();
 
+
         return Right(comments);
     } on ServerFailure catch (e) {
       return Left<Failure, List<CommentModel>>(
