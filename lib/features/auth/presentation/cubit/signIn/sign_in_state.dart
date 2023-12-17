@@ -10,7 +10,9 @@ class SignInState with _$SignInState {
 
   const factory SignInState.inProgress() = _InProgress;
 
-  const factory SignInState.signedIn(List<UserModel> users) = _SignedIn;
+  const factory SignInState.authorized(UserModel user) = _Authorized;
+
+  const factory SignInState.unauthorized() = _Unauthorized;
 
   const factory SignInState.failure(Failure failure) = _Failure;
 }

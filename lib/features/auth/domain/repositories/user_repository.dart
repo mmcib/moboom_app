@@ -3,7 +3,10 @@ import 'package:moboom_app/core/error/failures.dart';
 import 'package:moboom_app/features/auth/data/models/user_model.dart';
 
 abstract class UserRepository {
-  // Future<Either<Failure, UserModel>> getUser();
+  Future<Either<Failure, UserModel>> getUser({
+    required String email,
+    required String password,
+  });
 
   Future<Either<Failure, int>> addUser(UserModel user);
 

@@ -40,10 +40,14 @@ class MoboomDatabase extends _$MoboomDatabase implements UsersDatabase {
   @override
   Future<List<User>> getUserEntries() => select(userTable).get();
 
-  // Future<User> getUserEntry() => select(userTable).get();
+  Future<User?> getUserEntry(String email, String password) =>
+      (select(userTable)
+            ..where(
+              (it) => it.email.equals(email) & it.password.equals(password),
+            ))
+          .getSingleOrNull();
 
   // Future<User> getUserEntry();
-
 
   @override
   Future<int> insertUser(UserTableCompanion companion) {
@@ -51,6 +55,7 @@ class MoboomDatabase extends _$MoboomDatabase implements UsersDatabase {
       _mapUserToInsertCompanion(companion),
     );
   }
+
   //
   // Future<void> removeQuote(String quoteId) => (delete(quoteTable)..where((it) => it.id.equals(quoteId))).go();
   //

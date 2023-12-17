@@ -4,9 +4,9 @@ abstract class UsersDatabase {
   Future<int> insertUser(UserTableCompanion companion);
 
   Future<List<User>> getUserEntries();
-  // Future<User> getUserEntry();
-  //
-  // Future<void> removeQuote(String quoteId);
-  //
-  // Future<void> removeAllQuotes();
+
+  Future<User?> getUserEntry(
+    String email,
+    String password,
+  );
 }

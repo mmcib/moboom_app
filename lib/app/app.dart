@@ -30,7 +30,7 @@ class App extends StatelessWidget {
           title: appName,
           theme: getAppTheme(context),
           darkTheme: getAppTheme(context),
-          initialRoute: '/',
+          initialRoute: '/initialPage',
           onGenerateRoute: (settings) => router(settings),
         );
       },

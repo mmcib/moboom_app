@@ -1,37 +1,27 @@
 import 'package:bloc/bloc.dart';
-import 'package:moboom_app/core/usecases/usecases.dart';
-import 'package:moboom_app/features/auth/domain/usecases/add_user_use_case.dart';
-import 'package:moboom_app/features/auth/domain/usecases/get_all_local_users.dart';
+import 'package:moboom_app/features/auth/domain/usecases/get_user_use_case.dart';
 import 'package:moboom_app/features/auth/presentation/cubit/signIn/sign_in_state.dart';
-import 'package:moboom_app/features/auth/presentation/cubit/signUp/add_user_state.dart';
 
 class SignInCubit extends Cubit<SignInState> {
-  SignInCubit(this._getAllLocalUsersUseCase) : super(const SignInState.initial());
+  SignInCubit(this._getUserUseCase) : super(const SignInState.initial());
 
-  final GetAllLocalUsersUseCase _getAllLocalUsersUseCase;
+  final GetUserUseCase _getUserUseCase;
 
-  Future<void> getUsers(
-    // String id,
-    // String email,
-    // String password,
-    // String firstName,
-    // String lastName,
-  ) async {
+  Future<void> signIn({
+    required String email,
+    required String password,
+  }) async {
     emit(const SignInState.inProgress());
-    final result = await _getAllLocalUsersUseCase.execute(
-      NoParams(),
-
-      // id: id,
-      // email: email,
-      // password: password,
-      // firstName: firstName,
-      // lastName: lastName,
+    final authResult = await _getUserUseCase(
+      email: email,
+      password: password,
     );
-    result.fold(
-      (l) => emit( SignInState.failure(l)),
+
+    authResult.fold(
+      (_) => emit(const SignInState.unauthorized()),
       (r) {
         print('SignInCubit: ${r}');
-        return emit( SignInState.signedIn(r));
+        return emit(SignInState.authorized(r));
       },
     );
   }

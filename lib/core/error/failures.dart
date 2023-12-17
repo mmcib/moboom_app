@@ -40,6 +40,15 @@ class ClientFailure extends Failure {
   }
 }
 
+class AuthFailure extends Failure {
+  AuthFailure();
+
+  @override
+  String getMessage() {
+    return 'Auth failure';
+  }
+}
+
 class NoInternetConnectionFailure extends Failure {
   NoInternetConnectionFailure();
 

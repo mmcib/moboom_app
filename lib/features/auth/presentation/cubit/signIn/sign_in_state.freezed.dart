@@ -20,7 +20,8 @@ mixin _$SignInState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<UserModel> users) signedIn,
+    required TResult Function(UserModel user) authorized,
+    required TResult Function() unauthorized,
     required TResult Function(Failure failure) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +29,8 @@ mixin _$SignInState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<UserModel> users)? signedIn,
+    TResult? Function(UserModel user)? authorized,
+    TResult? Function()? unauthorized,
     TResult? Function(Failure failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +38,8 @@ mixin _$SignInState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<UserModel> users)? signedIn,
+    TResult Function(UserModel user)? authorized,
+    TResult Function()? unauthorized,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) =>
@@ -45,7 +48,8 @@ mixin _$SignInState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_SignedIn value) signedIn,
+    required TResult Function(_Authorized value) authorized,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +57,8 @@ mixin _$SignInState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_SignedIn value)? signedIn,
+    TResult? Function(_Authorized value)? authorized,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +66,8 @@ mixin _$SignInState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_SignedIn value)? signedIn,
+    TResult Function(_Authorized value)? authorized,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) =>
@@ -126,7 +132,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<UserModel> users) signedIn,
+    required TResult Function(UserModel user) authorized,
+    required TResult Function() unauthorized,
     required TResult Function(Failure failure) failure,
   }) {
     return initial();
@@ -137,7 +144,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<UserModel> users)? signedIn,
+    TResult? Function(UserModel user)? authorized,
+    TResult? Function()? unauthorized,
     TResult? Function(Failure failure)? failure,
   }) {
     return initial?.call();
@@ -148,7 +156,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<UserModel> users)? signedIn,
+    TResult Function(UserModel user)? authorized,
+    TResult Function()? unauthorized,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -163,7 +172,8 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_SignedIn value) signedIn,
+    required TResult Function(_Authorized value) authorized,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
@@ -174,7 +184,8 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_SignedIn value)? signedIn,
+    TResult? Function(_Authorized value)? authorized,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Failure value)? failure,
   }) {
     return initial?.call(this);
@@ -185,7 +196,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_SignedIn value)? signedIn,
+    TResult Function(_Authorized value)? authorized,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -240,7 +252,8 @@ class _$InProgressImpl implements _InProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<UserModel> users) signedIn,
+    required TResult Function(UserModel user) authorized,
+    required TResult Function() unauthorized,
     required TResult Function(Failure failure) failure,
   }) {
     return inProgress();
@@ -251,7 +264,8 @@ class _$InProgressImpl implements _InProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<UserModel> users)? signedIn,
+    TResult? Function(UserModel user)? authorized,
+    TResult? Function()? unauthorized,
     TResult? Function(Failure failure)? failure,
   }) {
     return inProgress?.call();
@@ -262,7 +276,8 @@ class _$InProgressImpl implements _InProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<UserModel> users)? signedIn,
+    TResult Function(UserModel user)? authorized,
+    TResult Function()? unauthorized,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -277,7 +292,8 @@ class _$InProgressImpl implements _InProgress {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_SignedIn value) signedIn,
+    required TResult Function(_Authorized value) authorized,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Failure value) failure,
   }) {
     return inProgress(this);
@@ -288,7 +304,8 @@ class _$InProgressImpl implements _InProgress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_SignedIn value)? signedIn,
+    TResult? Function(_Authorized value)? authorized,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Failure value)? failure,
   }) {
     return inProgress?.call(this);
@@ -299,7 +316,8 @@ class _$InProgressImpl implements _InProgress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_SignedIn value)? signedIn,
+    TResult Function(_Authorized value)? authorized,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -315,81 +333,76 @@ abstract class _InProgress implements SignInState {
 }
 
 /// @nodoc
-abstract class _$$SignedInImplCopyWith<$Res> {
-  factory _$$SignedInImplCopyWith(
-          _$SignedInImpl value, $Res Function(_$SignedInImpl) then) =
-      __$$SignedInImplCopyWithImpl<$Res>;
+abstract class _$$AuthorizedImplCopyWith<$Res> {
+  factory _$$AuthorizedImplCopyWith(
+          _$AuthorizedImpl value, $Res Function(_$AuthorizedImpl) then) =
+      __$$AuthorizedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<UserModel> users});
+  $Res call({UserModel user});
 }
 
 /// @nodoc
-class __$$SignedInImplCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$SignedInImpl>
-    implements _$$SignedInImplCopyWith<$Res> {
-  __$$SignedInImplCopyWithImpl(
-      _$SignedInImpl _value, $Res Function(_$SignedInImpl) _then)
+class __$$AuthorizedImplCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$AuthorizedImpl>
+    implements _$$AuthorizedImplCopyWith<$Res> {
+  __$$AuthorizedImplCopyWithImpl(
+      _$AuthorizedImpl _value, $Res Function(_$AuthorizedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? users = null,
+    Object? user = null,
   }) {
-    return _then(_$SignedInImpl(
-      null == users
-          ? _value._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<UserModel>,
+    return _then(_$AuthorizedImpl(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SignedInImpl implements _SignedIn {
-  const _$SignedInImpl(final List<UserModel> users) : _users = users;
+class _$AuthorizedImpl implements _Authorized {
+  const _$AuthorizedImpl(this.user);
 
-  final List<UserModel> _users;
   @override
-  List<UserModel> get users {
-    if (_users is EqualUnmodifiableListView) return _users;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_users);
-  }
+  final UserModel user;
 
   @override
   String toString() {
-    return 'SignInState.signedIn(users: $users)';
+    return 'SignInState.authorized(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SignedInImpl &&
-            const DeepCollectionEquality().equals(other._users, _users));
+            other is _$AuthorizedImpl &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignedInImplCopyWith<_$SignedInImpl> get copyWith =>
-      __$$SignedInImplCopyWithImpl<_$SignedInImpl>(this, _$identity);
+  _$$AuthorizedImplCopyWith<_$AuthorizedImpl> get copyWith =>
+      __$$AuthorizedImplCopyWithImpl<_$AuthorizedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<UserModel> users) signedIn,
+    required TResult Function(UserModel user) authorized,
+    required TResult Function() unauthorized,
     required TResult Function(Failure failure) failure,
   }) {
-    return signedIn(users);
+    return authorized(user);
   }
 
   @override
@@ -397,10 +410,11 @@ class _$SignedInImpl implements _SignedIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<UserModel> users)? signedIn,
+    TResult? Function(UserModel user)? authorized,
+    TResult? Function()? unauthorized,
     TResult? Function(Failure failure)? failure,
   }) {
-    return signedIn?.call(users);
+    return authorized?.call(user);
   }
 
   @override
@@ -408,12 +422,13 @@ class _$SignedInImpl implements _SignedIn {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<UserModel> users)? signedIn,
+    TResult Function(UserModel user)? authorized,
+    TResult Function()? unauthorized,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
-    if (signedIn != null) {
-      return signedIn(users);
+    if (authorized != null) {
+      return authorized(user);
     }
     return orElse();
   }
@@ -423,10 +438,11 @@ class _$SignedInImpl implements _SignedIn {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_SignedIn value) signedIn,
+    required TResult Function(_Authorized value) authorized,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Failure value) failure,
   }) {
-    return signedIn(this);
+    return authorized(this);
   }
 
   @override
@@ -434,10 +450,11 @@ class _$SignedInImpl implements _SignedIn {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_SignedIn value)? signedIn,
+    TResult? Function(_Authorized value)? authorized,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Failure value)? failure,
   }) {
-    return signedIn?.call(this);
+    return authorized?.call(this);
   }
 
   @override
@@ -445,24 +462,145 @@ class _$SignedInImpl implements _SignedIn {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_SignedIn value)? signedIn,
+    TResult Function(_Authorized value)? authorized,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
-    if (signedIn != null) {
-      return signedIn(this);
+    if (authorized != null) {
+      return authorized(this);
     }
     return orElse();
   }
 }
 
-abstract class _SignedIn implements SignInState {
-  const factory _SignedIn(final List<UserModel> users) = _$SignedInImpl;
+abstract class _Authorized implements SignInState {
+  const factory _Authorized(final UserModel user) = _$AuthorizedImpl;
 
-  List<UserModel> get users;
+  UserModel get user;
   @JsonKey(ignore: true)
-  _$$SignedInImplCopyWith<_$SignedInImpl> get copyWith =>
+  _$$AuthorizedImplCopyWith<_$AuthorizedImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnauthorizedImplCopyWith<$Res> {
+  factory _$$UnauthorizedImplCopyWith(
+          _$UnauthorizedImpl value, $Res Function(_$UnauthorizedImpl) then) =
+      __$$UnauthorizedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UnauthorizedImplCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$UnauthorizedImpl>
+    implements _$$UnauthorizedImplCopyWith<$Res> {
+  __$$UnauthorizedImplCopyWithImpl(
+      _$UnauthorizedImpl _value, $Res Function(_$UnauthorizedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UnauthorizedImpl implements _Unauthorized {
+  const _$UnauthorizedImpl();
+
+  @override
+  String toString() {
+    return 'SignInState.unauthorized()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UnauthorizedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() inProgress,
+    required TResult Function(UserModel user) authorized,
+    required TResult Function() unauthorized,
+    required TResult Function(Failure failure) failure,
+  }) {
+    return unauthorized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? inProgress,
+    TResult? Function(UserModel user)? authorized,
+    TResult? Function()? unauthorized,
+    TResult? Function(Failure failure)? failure,
+  }) {
+    return unauthorized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? inProgress,
+    TResult Function(UserModel user)? authorized,
+    TResult Function()? unauthorized,
+    TResult Function(Failure failure)? failure,
+    required TResult orElse(),
+  }) {
+    if (unauthorized != null) {
+      return unauthorized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InProgress value) inProgress,
+    required TResult Function(_Authorized value) authorized,
+    required TResult Function(_Unauthorized value) unauthorized,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return unauthorized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_InProgress value)? inProgress,
+    TResult? Function(_Authorized value)? authorized,
+    TResult? Function(_Unauthorized value)? unauthorized,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return unauthorized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InProgress value)? inProgress,
+    TResult Function(_Authorized value)? authorized,
+    TResult Function(_Unauthorized value)? unauthorized,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (unauthorized != null) {
+      return unauthorized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Unauthorized implements SignInState {
+  const factory _Unauthorized() = _$UnauthorizedImpl;
 }
 
 /// @nodoc
@@ -531,7 +669,8 @@ class _$FailureImpl implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<UserModel> users) signedIn,
+    required TResult Function(UserModel user) authorized,
+    required TResult Function() unauthorized,
     required TResult Function(Failure failure) failure,
   }) {
     return failure(this.failure);
@@ -542,7 +681,8 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<UserModel> users)? signedIn,
+    TResult? Function(UserModel user)? authorized,
+    TResult? Function()? unauthorized,
     TResult? Function(Failure failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -553,7 +693,8 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<UserModel> users)? signedIn,
+    TResult Function(UserModel user)? authorized,
+    TResult Function()? unauthorized,
     TResult Function(Failure failure)? failure,
     required TResult orElse(),
   }) {
@@ -568,7 +709,8 @@ class _$FailureImpl implements _Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_SignedIn value) signedIn,
+    required TResult Function(_Authorized value) authorized,
+    required TResult Function(_Unauthorized value) unauthorized,
     required TResult Function(_Failure value) failure,
   }) {
     return failure(this);
@@ -579,7 +721,8 @@ class _$FailureImpl implements _Failure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_SignedIn value)? signedIn,
+    TResult? Function(_Authorized value)? authorized,
+    TResult? Function(_Unauthorized value)? unauthorized,
     TResult? Function(_Failure value)? failure,
   }) {
     return failure?.call(this);
@@ -590,7 +733,8 @@ class _$FailureImpl implements _Failure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_SignedIn value)? signedIn,
+    TResult Function(_Authorized value)? authorized,
+    TResult Function(_Unauthorized value)? unauthorized,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
