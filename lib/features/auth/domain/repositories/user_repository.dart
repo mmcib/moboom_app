@@ -11,6 +11,4 @@ abstract class UserRepository {
   Future<Either<Failure, int>> addUser(UserModel user);
 
   Future<Either<Failure, List<UserModel>>> getAllLocalUsers();
-
-  // Future<Either<Failure, void>> removeQuote(String quoteId);
 }

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:moboom_app/core/presentation/components/button_component.dart';
 import 'package:moboom_app/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:moboom_app/features/auth/presentation/pages/sign_up_page.dart';
+import 'package:moboom_app/generated/l10n.dart';
 
 class InitialPage extends StatelessWidget {
   const InitialPage({super.key});
@@ -17,7 +18,7 @@ class InitialPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SimpleButton(
-              text: 'Logowanie',
+              text: S.of(context).signInTitle,
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -27,7 +28,7 @@ class InitialPage extends StatelessWidget {
             ),
             SizedBox(height: 16.h),
             SimpleButton(
-              text: 'Rejestracja',
+              text: S.of(context).signUpTitle,
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(

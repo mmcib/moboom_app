@@ -10,12 +10,14 @@ class UserTextField extends StatelessWidget {
     this.hintText,
     this.keyboardType,
     this.inputFormatters,
+    this.obscureText = false,
   });
 
   final TextEditingController controller;
   final String? Function(String?) validator;
   final int? maxLines;
   final String? hintText;
+  final bool obscureText;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
 
@@ -25,7 +27,8 @@ class UserTextField extends StatelessWidget {
       controller: controller,
       validator: validator,
       autocorrect: false,
-      maxLines: null,
+      maxLines: maxLines,
+      obscureText: obscureText,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
       decoration: InputDecoration(

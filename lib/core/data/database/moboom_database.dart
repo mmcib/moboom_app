@@ -47,21 +47,12 @@ class MoboomDatabase extends _$MoboomDatabase implements UsersDatabase {
             ))
           .getSingleOrNull();
 
-  // Future<User> getUserEntry();
-
   @override
   Future<int> insertUser(UserTableCompanion companion) {
     return into(userTable).insertOnConflictUpdate(
       _mapUserToInsertCompanion(companion),
     );
   }
-
-  //
-  // Future<void> removeQuote(String quoteId) => (delete(quoteTable)..where((it) => it.id.equals(quoteId))).go();
-  //
-  // @override
-  // Future<void> removeAllQuotes() => delete(quoteTable).go();
-  //
 
   UserTableCompanion _mapUserToInsertCompanion(UserTableCompanion user) {
     return UserTableCompanion.insert(

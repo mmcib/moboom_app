@@ -26,16 +26,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "comments": MessageLookupByLibrary.simpleMessage("komentarze"),
         "commentsNotFound":
             MessageLookupByLibrary.simpleMessage("Komentarze nie znalezione"),
-        "email": MessageLookupByLibrary.simpleMessage("email"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "enterEmail": MessageLookupByLibrary.simpleMessage("Wprowadź email"),
+        "enterFirstname": MessageLookupByLibrary.simpleMessage("Wprowadź imię"),
+        "enterLastname":
+            MessageLookupByLibrary.simpleMessage("Wprowadź nazwisko"),
+        "enterPassword": MessageLookupByLibrary.simpleMessage("Wprowadź hasło"),
         "failureViewMessage":
             MessageLookupByLibrary.simpleMessage("Ups... coś poszło nie tak"),
+        "firstname": MessageLookupByLibrary.simpleMessage("Imię"),
         "fullPhoto": MessageLookupByLibrary.simpleMessage("Pełne Zdjęcie"),
+        "lastname": MessageLookupByLibrary.simpleMessage("Nazwisko"),
+        "logout": MessageLookupByLibrary.simpleMessage("Wyloguj"),
+        "more": MessageLookupByLibrary.simpleMessage("Więcej"),
         "name": MessageLookupByLibrary.simpleMessage("nazwa"),
         "noInternetConnection":
             MessageLookupByLibrary.simpleMessage("Brak internetu"),
+        "password": MessageLookupByLibrary.simpleMessage("Hasło"),
         "photos": MessageLookupByLibrary.simpleMessage("zdjęcia"),
         "photosNotFound":
             MessageLookupByLibrary.simpleMessage("Zdjęcia nie znalezione"),
+        "signInTitle": MessageLookupByLibrary.simpleMessage("Logowanie"),
+        "signUpTitle": MessageLookupByLibrary.simpleMessage("Rejestracja"),
         "title": MessageLookupByLibrary.simpleMessage("tytuł"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Spróbuj ponownie")
       };

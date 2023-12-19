@@ -36,8 +36,7 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       backgroundColor: Color(0xFFF5F5F5),
       appBar: AppBar(
-        // title: Text(S.of(context).comments.capitalize()),
-        title: Text('SignIn'),
+        title: Text(S.of(context).signInTitle),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -51,33 +50,34 @@ class _SignInPageState extends State<SignInPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      _buildLabel('Email'),
+                      _buildLabel(S.of(context).email),
                       UserTextField(
                         controller: _emailTextController,
                         validator: (value) {
                           if (value != null && value.isEmpty) {
-                            return 'Wprowadź email';
+                            return S.of(context).enterEmail;
                           }
 
                           return null;
                         },
                         maxLines: null,
-                        hintText: 'Email',
+                        hintText: S.of(context).email,
                       ),
                       const SizedBox(height: 16),
-                      _buildLabel('Password'),
+                      _buildLabel(S.of(context).password),
                       const SizedBox(height: 6),
                       UserTextField(
                         controller: _passwordTextController,
+                        obscureText: true,
                         validator: (value) {
                           if (value != null && value.isEmpty) {
-                            return 'Proszę wprowadzić hasło';
+                            return S.of(context).enterPassword;
                           }
 
                           return null;
                         },
-                        maxLines: null,
-                        hintText: 'Hasło',
+                        maxLines: 1,
+                        hintText: S.of(context).password,
                       ),
                     ],
                   ),
@@ -87,14 +87,16 @@ class _SignInPageState extends State<SignInPage> {
               _buildSignInButton(context),
               BlocListener<SignInCubit, SignInState>(
                 listener: (context, SignInState state) {
-                   state.maybeWhen(
+                  state.maybeWhen(
                     authorized: (UserModel user) async {
                       showSuccessSnackBar(context, 'Zalogowano pomyślnie :)');
                       await Future.delayed(const Duration(milliseconds: 1500));
 
-                      return Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+                      return Navigator.pushNamedAndRemoveUntil(
+                          context, '/', (route) => false);
                     },
-                    unauthorized: () => showErrorSnackBar(context, 'Nieprawidłowe dane'),
+                    unauthorized: () =>
+                        showErrorSnackBar(context, 'Nieprawidłowe dane'),
                     inProgress: () {},
                     orElse: () {},
                   );
@@ -110,7 +112,7 @@ class _SignInPageState extends State<SignInPage> {
 
   Widget _buildSignInButton(BuildContext context) {
     return SimpleButton(
-      text: 'Zaloguj',
+      text: S.of(context).signInTitle,
       onPressed: () async {
         FocusScope.of(context).requestFocus(FocusNode());
 

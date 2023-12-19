@@ -1,7 +1,16 @@
 {
     "@@locale": "en",
     "name": "name",
-    "email": "email",
+    "email": "Email",
+    "password": "Password",
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "enterEmail": "Enter email",
+    "enterPassword": "Enter password",
+    "enterFirstname": "Enter firstname",
+    "enterLastname": "Enter lastname",
+    "signInTitle": "Sign In",
+    "signUpTitle": "Sign Up",
     "body": "body",
     "title": "title",
     "comments": "comments",
@@ -11,5 +20,7 @@
     "commentsNotFound": "Comments not found",
     "failureViewMessage": "Ups... something went wrong",
     "noInternetConnection": "No internet connection",
-    "tryAgain": "Try again"
+    "tryAgain": "Try again",
+    "more": "More",
+    "logout": "Logout"
 }

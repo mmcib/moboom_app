@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moboom_app/core/extensions/string_extensions.dart';
-import 'package:moboom_app/features/auth/presentation/pages/get_all_users.dart';
 import 'package:moboom_app/features/comments/presentation/pages/comments_page.dart';
+import 'package:moboom_app/features/more/presentation/pages/more_page.dart';
 import 'package:moboom_app/features/photos/presentation/pages/photos_page.dart';
 import 'package:moboom_app/generated/l10n.dart';
 
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _tabOptions = [
     PhotosPage(),
     CommentsPage(),
-    GetAllUsersPage(),
+    MorePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -42,8 +42,8 @@ class _HomePageState extends State<HomePage> {
             label: S.of(context).comments.capitalize(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'GetAllUsers',
+            icon: Icon(Icons.more),
+            label: S.of(context).more,
           ),
         ],
         currentIndex: _selectedIndex,

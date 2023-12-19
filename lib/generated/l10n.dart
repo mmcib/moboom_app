@@ -60,11 +60,101 @@ class S {
     );
   }
 
-  /// `email`
+  /// `Email`
   String get email {
     return Intl.message(
-      'email',
+      'Email',
       name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Firstname`
+  String get firstname {
+    return Intl.message(
+      'Firstname',
+      name: 'firstname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lastname`
+  String get lastname {
+    return Intl.message(
+      'Lastname',
+      name: 'lastname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter email`
+  String get enterEmail {
+    return Intl.message(
+      'Enter email',
+      name: 'enterEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter password`
+  String get enterPassword {
+    return Intl.message(
+      'Enter password',
+      name: 'enterPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter firstname`
+  String get enterFirstname {
+    return Intl.message(
+      'Enter firstname',
+      name: 'enterFirstname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter lastname`
+  String get enterLastname {
+    return Intl.message(
+      'Enter lastname',
+      name: 'enterLastname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signInTitle {
+    return Intl.message(
+      'Sign In',
+      name: 'signInTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get signUpTitle {
+    return Intl.message(
+      'Sign Up',
+      name: 'signUpTitle',
       desc: '',
       args: [],
     );
@@ -165,6 +255,26 @@ class S {
     return Intl.message(
       'Try again',
       name: 'tryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More`
+  String get more {
+    return Intl.message(
+      'More',
+      name: 'more',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
       desc: '',
       args: [],
     );
